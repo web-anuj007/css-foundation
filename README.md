@@ -110,7 +110,7 @@ Both our .read and .unread selectors share the color: white; and background-colo
 ## Chaining Selectors
 Example -- 
 ```css
-	/*	Chaining selector with class and class*/
+	/* Chaining selector with class and class*/
 	.box.container{
 		background-color: yellowgreen;
 	}
@@ -156,27 +156,16 @@ In the above example, the first two elements with the contents class (B and C) w
 There’s really no limit to how many combinators you can add to a rule, so .one .two .three .four would be totally valid. This would just select an element that has a class of four if it has an ancestor with a class of three, and if that ancestor has its own ancestor with a class of two, and so on. You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity.
 
 # Some basics css property
-
-## Color
-sets an element’s text color
-
-## Background-Color
-sets, well, the background color of an element
-
-## font-family
- can be a single value or a comma-separated list of values that determine what font an element uses.
-
- Each font will fall into one of two categories, either a “font family name” like "DejaVu Sans" (we use quotes due to the whitespace between words) or a “generic family name” like sans-serif (generic family names never use quotes).
-
- ## font-size
- the property name suggests, set the size of the font. When giving a value to this property, the value should not contain any whitespace, e.g. font-size: 22px has no space between “22” and “px”.
-
- ## font-weight
- affects the boldness of text
-
- ## text-align
- will align text horizontally(x-axis) within an element
-
+|||
+|-|-|
+|Property|Description|
+|color|sets an element’s text color|
+|background-color|sets, well, the background color of an element|
+|font-family|can be a single value or a comma-separated list of values that determine what font an element uses|
+|font-size|set the size of the font|
+|font-weight| affects the boldness of text|
+|text-align|will align text horizontally(x-axis) within an element|
+ 
 # Image Height and Width
 By default, an <img> element’s height and width values will be the same as the actual image file’s height and width
 
