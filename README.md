@@ -110,14 +110,14 @@ Both our .read and .unread selectors share the color: white; and background-colo
 ## Chaining Selectors
 Example -- 
 ```css
-	/* Chaining selector with class and class*/
-	.box.container{
-		background-color: yellowgreen;
-	}
-	/* Chaining selector with class and id*/
-	.box#id1 {
-		background-color: gray;
-	}
+/* Chaining selector with class and class*/
+.box.container{
+	background-color: yellowgreen;
+}
+/* Chaining selector with class and id*/
+.box#id1 {
+	background-color: gray;
+}
 ```
 
 For more context -- refer `chaining-selector.html`
