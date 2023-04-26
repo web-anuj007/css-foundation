@@ -192,3 +192,67 @@ img {
 It’s best to include both of these properties for <img> elements, even <strong>if you don’t plan on adjusting the values from the image file’s original ones. When these values aren’t included, if an image takes longer to load than the rest of the page contents, the image won’t take up any space on the page at first, but will suddenly cause a drastic shift of the other page contents once it does load in</strong>
 
 Explicitly stating a height and width prevents this from happening, as space will be “reserved” on the page and will just appear as a blank space until the image loads.
+
+
+
+# Specificity
+CSS declaration that is more specific will take precedence over less specific ones.
+
+|||
+|-|-|
+| Type | Rank|
+|ID selectors| 1|
+|Class selectors| 2|
+|Type selectors| 3|
+
+
+<strong>Note -  a larger amount of a single selector will beat a smaller amount of that same selector.</strong>
+
+
+# Property Inheritance
+
+Inheritance refers to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants. Typography based properties (color, font-size, font-family, etc.) are usually inherited, while most other properties aren’t.
+
+The exception to this is when directly targeting an element, as this always beats inheritance:
+```html
+<!-- index.html -->
+
+<div id="parent">
+  <div class="child"></div>
+</div>
+```
+
+```css
+/* styles.css */
+
+#parent {
+  color: red;
+}
+
+.child {
+  color: blue;
+}
+```
+
+Despite the parent element having a higher specificity with an ID, the child element would have the color: blue style applied since that declaration directly targets it, while color: red from the parent is only inherited.
+
+ ## Rule Order
+
+The final factor, the end of the line, the tie-breaker of the tie-breaker. Let’s say that after every other factor has been taken into account, there are still multiple conflicting rules targeting an element. How does the cascade determine which rule to apply?
+
+Really simply, actually. Whichever rule was the last defined is the winner
+
+```css
+/* styles.css */
+
+.alert {
+  color: red;
+}
+
+.warning {
+  color: yellow;
+}
+```
+
+For an element that has both the alert and warning classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the .warning rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
+
