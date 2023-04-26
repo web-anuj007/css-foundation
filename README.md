@@ -108,8 +108,87 @@ Both our .read and .unread selectors share the color: white; and background-colo
 ```
 
 ## Chaining Selectors
-continue
+Example -- 
+```css
+	/*	Chaining selector with class and class*/
+	.box.container{
+		background-color: yellowgreen;
+	}
+	/* Chaining selector with class and id*/
+	.box#id1 {
+		background-color: gray;
+	}
+```
+
+For more context -- refer `chaining-selector.html`
 
 
 
+# Descendant Combinator
 
+## Descendant Combinator
+Represented in CSS by a single space between selectors. A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc) that matches the previous selector.
+
+Example --
+```html
+<!-- index.html -->
+
+<div class="ancestor"> <!-- A -->
+  <div class="contents"> <!-- B  selected from css rule--> 
+    <div class="contents"> <!-- C selected from css rule --> 
+    </div>
+  </div>
+</div>
+
+<div class="contents"></div> <!-- D -->
+```
+
+```css
+/* styles.css */
+
+.ancestor .contents {
+  /* some declarations */
+}
+```
+
+In the above example, the first two elements with the contents class (B and C) would be selected, but that last element (D) won’t be. Was your guess correct?
+
+There’s really no limit to how many combinators you can add to a rule, so .one .two .three .four would be totally valid. This would just select an element that has a class of four if it has an ancestor with a class of three, and if that ancestor has its own ancestor with a class of two, and so on. You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity.
+
+# Some basics css property
+
+## Color
+sets an element’s text color
+
+## Background-Color
+sets, well, the background color of an element
+
+## font-family
+ can be a single value or a comma-separated list of values that determine what font an element uses.
+
+ Each font will fall into one of two categories, either a “font family name” like "DejaVu Sans" (we use quotes due to the whitespace between words) or a “generic family name” like sans-serif (generic family names never use quotes).
+
+ ## font-size
+ the property name suggests, set the size of the font. When giving a value to this property, the value should not contain any whitespace, e.g. font-size: 22px has no space between “22” and “px”.
+
+ ## font-weight
+ affects the boldness of text
+
+ ## text-align
+ will align text horizontally(x-axis) within an element
+
+# Image Height and Width
+By default, an <img> element’s height and width values will be the same as the actual image file’s height and width
+
+> Note -- If you wanted to adjust the size of the image without causing it to lose its proportions, you would use a value of “auto” for the height property and adjust the width value:
+
+```css
+img {
+  height: auto;
+  width: 500px;
+}
+```
+
+It’s best to include both of these properties for <img> elements, even <strong>if you don’t plan on adjusting the values from the image file’s original ones. When these values aren’t included, if an image takes longer to load than the rest of the page contents, the image won’t take up any space on the page at first, but will suddenly cause a drastic shift of the other page contents once it does load in</strong>
+
+Explicitly stating a height and width prevents this from happening, as space will be “reserved” on the page and will just appear as a blank space until the image loads.

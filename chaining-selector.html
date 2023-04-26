@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chaining Selector</title>
+	<style type="text/css">
+		/*	Chaining selector with class and class*/
+		.box.container{
+			background-color: yellowgreen;
+		}
+		/* Chaining selector with class and id*/
+		.box#id1 {
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box container"> Test inside container having class <b>box & container</b> </div>
+		Text inside container having class <b>box</b> Only
+		<div class="box" id="id1"> Text inside container having class <b>box</b> and id <b>id1</b></div>
+	</div>
+</body>
+</html>
