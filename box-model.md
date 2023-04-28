@@ -18,7 +18,7 @@ Some basics --
 - Padding, margin and border will cause other elements to be pushed away from the box.
 - If width is not specified, the box will extend in the inline direction to fill the space available in its container. In most cases, the box will become as wide as its container, filling up 100% of the space available.
 
-Example -- <h1> & <p> element have default display type block
+Example -- `<h1>` & `<p>` element have default display type block
 
 **If a box has an outer display type of inline, then:**
 
@@ -27,7 +27,7 @@ Example -- <h1> & <p> element have default display type block
 - Top and bottom padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.
 - Left and right padding, margins, and borders will apply and will cause other inline boxes to move away from the box.
 
-Example -- <a>, <span>, <em> and <strong> use inline as their outer display type by default.
+Example -- `<a>`, `<span>`, `<em>` and `<strong>` use inline as their outer display type by default.
 
 ### Inner display type
 Boxes also have an inner display type, which dictates how elements inside that box are laid out.
@@ -68,7 +68,7 @@ In the alternative box model, any width is the width of the visible box on the p
 
 ```
 
->To use the alternative box model for all of your elements (which is a common choice among developers), set the box-sizing property on the <html> element and set all other elements to inherit that value:
+>To use the alternative box model for all of your elements (which is a common choice among developers), set the box-sizing property on the `<html>` element and set all other elements to inherit that value:
 
 ```css
 html {
